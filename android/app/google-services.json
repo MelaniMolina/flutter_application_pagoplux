@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1061078500537",
+    "project_id": "flutterpago",
+    "storage_bucket": "flutterpago.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061078500537:android:1c05bc86138c1ce2cb8768",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_pagoplux"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjg13QLHwaxRBnsxi0YG7eUsT-oJOUU6Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
