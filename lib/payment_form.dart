@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PaymentForm extends StatelessWidget {
   const PaymentForm({Key? key}) : super(key: key);
@@ -52,6 +53,33 @@ class _MyFormState extends State<MyForm> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _paymentValueController = TextEditingController();
   TextEditingController _idController = TextEditingController();
+
+  Future<void> _saveData() async {
+    try {
+      await FirebaseFirestore.instance.collection('payments').add({
+        'full_name': _fullNameController.text,
+        'phone_number': _phoneController.text,
+        'address': _addressController.text,
+        'email': _emailController.text,
+        'payment_value': _paymentValueController.text,
+        'id_number': _idController.text,
+        'timestamp': FieldValue.serverTimestamp(),
+      });
+
+      // Mostrar un mensaje de éxito
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Payment information saved successfully'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+
+      // Puedes agregar aquí más acciones después de guardar con éxito
+    } catch (e) {
+      // Manejar errores, si es necesario
+      print('Error saving data: $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -182,7 +210,7 @@ class _MyFormState extends State<MyForm> {
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 // Procesa los datos del formulario
-                // Puedes guardar los datos en una base de datos o realizar otras acciones necesarias
+                _saveData();
               }
             },
             child: Text('Send'),
@@ -192,4 +220,3 @@ class _MyFormState extends State<MyForm> {
     );
   }
 }
-
