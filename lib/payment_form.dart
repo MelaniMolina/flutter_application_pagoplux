@@ -53,6 +53,9 @@ class _MyFormState extends State<MyForm> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _paymentValueController = TextEditingController();
   TextEditingController _idController = TextEditingController();
+  TextEditingController _businessNameController = TextEditingController();
+  TextEditingController _businessEmailController = TextEditingController();
+  TextEditingController _descriptionController = TextEditingController();
 
   Future<void> _saveData() async {
     try {
@@ -63,20 +66,24 @@ class _MyFormState extends State<MyForm> {
         'email': _emailController.text,
         'payment_value': _paymentValueController.text,
         'id_number': _idController.text,
+        'business_name': _businessNameController.text,
+        'business_email': _businessEmailController.text,
+        'description': _descriptionController.text,
         'timestamp': FieldValue.serverTimestamp(),
       });
 
-      // Mostrar un mensaje de éxito
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Payment information saved successfully'),
           duration: Duration(seconds: 2),
+          backgroundColor: Colors.green,
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
         ),
       );
-
-      // Puedes agregar aquí más acciones después de guardar con éxito
     } catch (e) {
-      // Manejar errores, si es necesario
       print('Error saving data: $e');
     }
   }
@@ -121,7 +128,7 @@ class _MyFormState extends State<MyForm> {
               if (value == null || value.isEmpty) {
                 return 'Please enter your phone number';
               }
-              // Puedes agregar más validaciones según tus necesidades
+
               return null;
             },
           ),
@@ -181,7 +188,7 @@ class _MyFormState extends State<MyForm> {
               if (value == null || value.isEmpty) {
                 return 'Please enter the payment value';
               }
-              // Puedes agregar más validaciones según tus necesidades
+
               return null;
             },
           ),
@@ -201,7 +208,66 @@ class _MyFormState extends State<MyForm> {
               if (value == null || value.isEmpty) {
                 return 'Please enter your ID';
               }
-              // Puedes agregar más validaciones según tus necesidades
+
+              return null;
+            },
+          ),
+          SizedBox(height: 16),
+          TextFormField(
+            controller: _businessNameController,
+            style: TextStyle(
+              color: Colors.black,
+              fontFamily: 'SFUIDisplay',
+            ),
+            decoration: InputDecoration(
+              labelText: 'BUSINESS NAME',
+              prefixIcon: Icon(Icons.business),
+              labelStyle: TextStyle(fontSize: 12),
+            ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your business name';
+              }
+              return null;
+            },
+          ),
+          SizedBox(height: 16),
+          TextFormField(
+            controller: _businessEmailController,
+            style: TextStyle(
+              color: Colors.black,
+              fontFamily: 'SFUIDisplay',
+            ),
+            decoration: InputDecoration(
+              labelText: 'BUSINESS EMAIL',
+              prefixIcon: Icon(Icons.email),
+              labelStyle: TextStyle(fontSize: 12),
+            ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your business email';
+              } else if (!value.contains('@')) {
+                return 'Enter a valid business email address';
+              }
+              return null;
+            },
+          ),
+          SizedBox(height: 16),
+          TextFormField(
+            controller: _descriptionController,
+            style: TextStyle(
+              color: Colors.black,
+              fontFamily: 'SFUIDisplay',
+            ),
+            decoration: InputDecoration(
+              labelText: 'DESCRIPTION',
+              prefixIcon: Icon(Icons.description),
+              labelStyle: TextStyle(fontSize: 12),
+            ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter a description';
+              }
               return null;
             },
           ),
@@ -209,7 +275,6 @@ class _MyFormState extends State<MyForm> {
           ElevatedButton(
             onPressed: () {
               if (_formKey.currentState!.validate()) {
-                // Procesa los datos del formulario
                 _saveData();
               }
             },

@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void initState() {
-    // TODO: implement initState
+   
     super.initState();
     _animationController = AnimationController(
       vsync: this,
@@ -44,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen>
 
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(
-                    50.50), // Ajusta el radio según tus necesidades
+                    50.50), 
                 child: Image.asset('assets/transparente-fin.png'),
               ),
             ),
@@ -66,7 +66,7 @@ class _SplashScreenState extends State<SplashScreen>
                   fontWeight: FontWeight.bold,
                   fontStyle: FontStyle.italic,
                   color: Colors.white,
-                  letterSpacing: 1.2, // Espaciado entre letras
+                  letterSpacing: 1.2, 
                 ),
               ),
             )
