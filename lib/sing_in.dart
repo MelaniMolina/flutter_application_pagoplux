@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
 import 'sing_up.dart';
-
+import 'payment_form.dart';
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
 
@@ -93,7 +92,7 @@ class _SignInState extends State<SignIn> {
                               password: _passwordController.text)
                           .then((value) => {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => HomeScreen()))
+                                    builder: (context) => PaymentForm()))
                               });
                     },
                     style: ElevatedButton.styleFrom(
