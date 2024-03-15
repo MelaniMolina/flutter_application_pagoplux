@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'sing_up.dart';
+import 'payment_admin.dart'; 
 import 'second_screen.dart';
+
 class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+  const SignIn({Key? key});
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -85,16 +87,7 @@ class _SignInState extends State<SignIn> {
                 child: SizedBox(
                   height: 50,
                   child: ElevatedButton(
-                    onPressed: () {
-                      FirebaseAuth.instance
-                          .signInWithEmailAndPassword(
-                              email: _emailAddressController.text,
-                              password: _passwordController.text)
-                          .then((value) => {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => SecondScreen()))
-                              });
-                    },
+                    onPressed: _signIn, // Cambia el onPressed para llamar a _signIn
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.green,
                         shape: RoundedRectangleBorder(
@@ -105,7 +98,7 @@ class _SignInState extends State<SignIn> {
                         Text(
                           'Login',
                           style: TextStyle(
-                            color: Colors.white, // Color blanco
+                            color: Colors.white,
                           ),
                         ),
                         SizedBox(width: 5),
@@ -142,5 +135,50 @@ class _SignInState extends State<SignIn> {
         ),
       ),
     );
+  }
+
+  void _signIn() {
+    String email = _emailAddressController.text.trim();
+    String password = _passwordController.text.trim();
+    print('Email: $email, Password: $password');
+
+    FirebaseAuth.instance
+        .signInWithEmailAndPassword(email: email, password: password)
+        .then((userCredential) {
+      // Verifica si el usuario es el administrador
+      if (email == 'admin@gmail.com' && password == 'admin123') {
+        // Si el usuario es el administrador, navega a la página PaymentAdmin
+        print('Inició sesión como administrador');
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => PaymentAdmin()),
+        );
+      } else {
+        // Si no es el administrador, navega a la página SecondScreen
+        print('Inició sesión como usuario normal');
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => SecondScreen()),
+        );
+      }
+    }).catchError((error) {
+      print('Error al iniciar sesión: $error');
+      // Muestra un mensaje de error
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Error'),
+            content: Text('Ocurrió un error al iniciar sesión. Por favor, inténtalo de nuevo.'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('OK'),
+              ),
+            ],
+          );
+        },
+      );
+    });
   }
 }

@@ -54,7 +54,7 @@ class PaymentHistory extends StatelessWidget {
                     DataCell(Text(data['payment_value'] != null
                         ? '\$${data['payment_value']}'
                         : '')),
-                    DataCell(Text('Paid')), // Assuming all payments are paid
+                    DataCell(Text('Solicitud')), // Assuming all payments are paid
                     DataCell(Text('')), // Empty observation by default
                   ],
                 );
