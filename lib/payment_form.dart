@@ -18,20 +18,33 @@ class PaymentForm extends StatelessWidget {
           ),
         ),
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Payment Form',
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 20),
-                MyForm(),
-              ],
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/trans.jpg'), // Ruta de tu imagen de fondo
+            fit: BoxFit.cover, // Ajusta la imagen al tamaño del contenedor
+            colorFilter: ColorFilter.mode(
+              Color.fromARGB(255, 247, 250, 250).withOpacity(0.7),
+              BlendMode.darken,
+            ),
+          ),
+        ),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Payment Form',
+                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 20),
+                  MyForm(),
+                ],
+              ),
             ),
           ),
         ),
@@ -71,6 +84,16 @@ class _MyFormState extends State<MyForm> {
         'description': _descriptionController.text,
         'timestamp': FieldValue.serverTimestamp(),
       });
+      // Limpiar todos los campos del formulario después de enviar los datos
+      _fullNameController.clear();
+      _phoneController.clear();
+      _addressController.clear();
+      _emailController.clear();
+      _paymentValueController.clear();
+      _idController.clear();
+      _businessNameController.clear();
+      _businessEmailController.clear();
+      _descriptionController.clear();
 
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(

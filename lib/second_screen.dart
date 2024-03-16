@@ -22,44 +22,51 @@ class SecondScreen extends StatelessWidget {
             ),
           ),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(height: 45),
-            Text(
-              'Welcome Customer!!!',
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/cobros.jpg'), // Ruta de tu imagen de fondo
+              fit: BoxFit.cover, // Ajusta la imagen al tamaño del contenedor
             ),
-            SizedBox(height: 20),
-            Text(
-              'Choose the Option you want to Perform',
-              style: TextStyle(fontSize: 20, color: Colors.grey),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 45),
-            Center(
-              child: Button(
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => PaymentForm()),
-                  );
-                },
-                text: 'Make payments',
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(height: 45),
+              Text(
+                'Welcome Customer!!!',
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
-            ),
-            SizedBox(height: 20),
-            Center(
-              child: Button(
-                onPressed: () {
-                  
-                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => PaymentHistory(currentUserEmail: currentUserEmail)),
-                  );
-                },
-                text: 'Payment history',
+              SizedBox(height: 20),
+              Text(
+                'Choose the Option you want to Perform',
+                style: TextStyle(fontSize: 20, color: Colors.grey),
+                textAlign: TextAlign.center,
               ),
-            ),
-          ],
+              SizedBox(height: 45),
+              Center(
+                child: Button(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => PaymentForm()),
+                    );
+                  },
+                  text: 'Make payments',
+                ),
+              ),
+              SizedBox(height: 20),
+              Center(
+                child: Button(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => PaymentHistory(currentUserEmail: currentUserEmail)),
+                    );
+                  },
+                  text: 'Payment history',
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

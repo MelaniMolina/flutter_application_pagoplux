@@ -12,12 +12,13 @@ class HomeScreen extends StatelessWidget {
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/logo.png'),
+              image: AssetImage('assets/personas.jpg'),
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
                 Color.fromARGB(255, 220, 243, 237).withOpacity(0.7),
                 BlendMode.darken,
               ),
+              alignment: Alignment.center,
             ),
           ),
           child: Column(
@@ -49,7 +50,7 @@ class HomeScreen extends StatelessWidget {
                   text: 'Sign In',
                 ),
               ),
-       
+
               // Button(
               //   onPressed: () {
               //     Navigator.of(context).push(
