@@ -22,11 +22,11 @@ Sing In
 - Correo electrónico: admin@gmail.com
 - Contraseña: admin123
 
-![Captura de pantalla de la aplicación](https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/14823add-1255-4914-8f95-ddd11b73e3bf)
+<img src="https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/14823add-1255-4914-8f95-ddd11b73e3bf" width="200" height="400" >
 
 ## Configuración para Usuarios 
 <img src="https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/ccabda1e-4de3-41d1-a5d8-25b013ba9fc1" width="200" height="400">
 
 ## Firebase
 Base de Datos
-<img src="https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/41dc8f12-c8ac-4d32-9e05-d68d286132b7" width="200" height="400">
+<img src="https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/41dc8f12-c8ac-4d32-9e05-d68d286132b7">
