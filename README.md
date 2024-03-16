@@ -12,10 +12,9 @@ La aplicación "flutter_application_pagoplux" es una plataforma desarrollada con
 - Ejecución de pagos a través de la aplicación.
 
 ## Autentificación 
-Sing Up
+## Autentificación 
+Sing Up & Sing In
 <img src="https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/0615bdbb-dff0-4a5b-84d3-3a097ded8402" width="200" height="400">
-
-Sing In 
 <img src="https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/e537dec3-9815-4bc7-b5e9-c96a97c6fb1b" width="200" height="400">
 
 ### Configuración de administrador:
