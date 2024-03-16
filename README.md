@@ -1,16 +1,19 @@
 # flutter_application_pagoplux
 
-A new Flutter project.
+## App Pagoplux
 
-## Getting Started
+La aplicación "flutter_application_pagoplux" es una plataforma desarrollada con Flutter que permite gestionar pagos. Utiliza una base de datos Firebase para almacenar los datos de los usuarios, lo que garantiza una experiencia segura y escalable.
 
-This project is a starting point for a Flutter application.
+### Funcionalidades principales:
+- Registro de usuarios.
+- Inicio de sesión con autenticación segura.
+- Administración de usuarios y pagos.
+- Interfaz de administrador y usuario diferenciada.
+- Ejecución de pagos a través de la aplicación.
 
-A few resources to get you started if this is your first Flutter project:
+### Configuración de administrador:
+- Correo electrónico: admin@gmail.com
+- Contraseña: admin123
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Captura de pantalla de la aplicación](https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/14823add-1255-4914-8f95-ddd11b73e3bf)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
