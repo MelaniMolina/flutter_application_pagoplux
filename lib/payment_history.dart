@@ -15,7 +15,7 @@ class PaymentHistory extends StatelessWidget {
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
             .collection('payments')
-            .where('email', isEqualTo: currentUserEmail) // Filtrar por correo electrónico del usuario actual
+            .where('email', isEqualTo: currentUserEmail)
             .snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -51,11 +51,9 @@ class PaymentHistory extends StatelessWidget {
                     DataCell(Text(data['business_name'] ?? '')),
                     DataCell(Text(data['phone_number'] ?? '')),
                     DataCell(Text(data['description'] ?? '')),
-                    DataCell(Text(data['payment_value'] != null
-                        ? '\$${data['payment_value']}'
-                        : '')),
-                    DataCell(Text('Solicitud')), // Assuming all payments are paid
-                    DataCell(Text('')), // Empty observation by default
+                    DataCell(Text(data['payment_value'] != null ? '\$${data['payment_value']}' : '')),
+                    DataCell(Text(data['status'] ?? '')),
+                    DataCell(Text(data['observation'] ?? '')),
                   ],
                 );
               }).toList(),
