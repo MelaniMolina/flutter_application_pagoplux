@@ -13,10 +13,10 @@ La aplicación "flutter_application_pagoplux" es una plataforma desarrollada con
 
 ## Autentificación 
 Sing Up
-![Sing Up](https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/0615bdbb-dff0-4a5b-84d3-3a097ded8402)
+<img src="https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/0615bdbb-dff0-4a5b-84d3-3a097ded8402" width="200" height="400">
 
 Sing In 
-![Sing In](https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/e537dec3-9815-4bc7-b5e9-c96a97c6fb1b)
+<img src="https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/e537dec3-9815-4bc7-b5e9-c96a97c6fb1b" width="200" height="400">
 
 ### Configuración de administrador:
 - Correo electrónico: admin@gmail.com
@@ -25,11 +25,8 @@ Sing In
 ![Captura de pantalla de la aplicación](https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/14823add-1255-4914-8f95-ddd11b73e3bf)
 
 ## Configuración para Usuarios 
-![Configuración para Usuarios](https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/ccabda1e-4de3-41d1-a5d8-25b013ba9fc1)
+<img src="https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/ccabda1e-4de3-41d1-a5d8-25b013ba9fc1" width="200" height="400">
 
 ## Firebase
 Base de Datos
-![Base de Datos](https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/41dc8f12-c8ac-4d32-9e05-d68d286132b7)
-
-
-
+<img src="https://github.com/MelaniMolina/flutter_application_pagoplux/assets/113868310/41dc8f12-c8ac-4d32-9e05-d68d286132b7" width="200" height="400">
